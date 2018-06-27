@@ -1,21 +1,18 @@
-const botconfig = require("./botconfig.json");
 const tokenfile = require("./token.json");
-const Discord = require("discord.js");
 const fs = require("fs");
-const PREFIX = ("!sp-");
+const botconfig = require("./botconfig.json");
+const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  let jsfile = files.filter(f => f.split(".").pop() === "js");
   if(jsfile.length <= 0){
     console.log("Couldn't find commands.");
     return;
   }
-
-  
 
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
@@ -29,26 +26,11 @@ bot.on("ready", async () => {
   bot.user.setActivity("with SP Trucking Co", {type: "PLAYING"});
    await client.change_presence(game=discord.Game(name='something goes here'));
 
-
-  });
+});
 
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-
-bot.on("message", function(message) {
-  if (message.author.equals(bot.user)) return;
-
-  if (!message.content.startsWith(PREFIX)) return;
-
-  var args = message.content.substring(PREFIX.length).split(" ");
-
-  switch (args[0]) {
-    case "SADOPS":
-      message.channel.sendMessage("Join the SADOPS server if you are down for some RP on a great FiveM server!")
-      
-  }
-});
 
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
@@ -59,6 +41,8 @@ bot.on("message", function(message) {
 
 });
 
+
+var cli = new Discord.Client({autoReconnect:true});
 
 
 bot.login(process.env.BOT_TOKEN);

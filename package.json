@@ -1,15 +1,20 @@
 {
-  "name": "sadosbot",
+  "name": "spcrewbot",
   "version": "1.0.0",
-  "description": "rp bot",
+  "description": "Server bot specially made to the Simulation Crew",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "dev",
+  "author": "Elijah",
   "license": "ISC",
   "dependencies": {
+    "array-sort-by": "^1.2.1",
     "discord.js": "^11.3.2",
-    "ms": "^2.1.1"
-  }
+    "ms": "^2.1.1",
+    "nodemon": "^1.17.5",
+    "table": "^4.0.3",
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {}
 }
