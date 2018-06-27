@@ -26,7 +26,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("San Andreas Department Of Safety On FiveM",{type:"playing"});
+  bot.user.setActivity("With SP Trucking Co",{type:"playing"});
 
 
   });
