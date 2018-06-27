@@ -26,7 +26,8 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("With SP Trucking Co",{type:"playing"});
+  bot.user.setActivity("with SP Trucking Co", {type: "PLAYING"});
+   await client.change_presence(game=discord.Game(name='something goes here'));
 
 
   });
