@@ -21,6 +21,14 @@ module.exports.run = async (bot, message, args) => {
       .addField("!sp-addrole <User> <Role>")
       .addField("!sp-lockdown <Seconds>");
 
+      let staffcommandschannel = message.channel.send;
+      
+  
+  
+      message.delete().catch(O_o=>{});
+      staffcommandschannel.send(staffcommandsEmbed);
+  
+
 }
 
 module.exports.help = {
