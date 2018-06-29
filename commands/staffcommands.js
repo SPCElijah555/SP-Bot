@@ -6,7 +6,8 @@ module.exports.run = async (bot, message, args) => {
      if(!message.member.hasPermission("MANAGE_MEMBERS")) return;
       const sayMessage = args.join(" ");
       message.delete().catch();
-      let reportEmbed = new Discord.RichEmbed()
+      
+      let staffcommandsEmbed = new Discord.RichEmbed()
       .setDescription("Staff Commands")
       .setColor("#00395F")
       .addField("!sp-Clear <Number of messages you wish to clear>")
